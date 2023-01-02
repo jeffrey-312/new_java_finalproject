@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btn_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="8dp"
+        android:minWidth="20dp"
+        android:text="首頁"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_alarm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="@color/teal_700"
+        android:minWidth="20dp"
+        android:text="鬧鐘"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_main" />
+
+    <Button
+        android:id="@+id/btn_stopwatch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="@color/teal_700"
+        android:minWidth="20dp"
+        android:text="碼表"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_alarm" />
+
+    <Button
+        android:id="@+id/btn_timing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="@color/teal_700"
+        android:minWidth="20dp"
+        android:text="計時"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_stopwatch" />
+
+    <AnalogClock
+        android:id="@+id/AnalogClock"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:dial="@drawable/clock4"
+        tools:ignore="MissingConstraints"
+
+
+        app:layout_constraintVertical_bias="0.2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+    <DigitalClock
+        android:id="@+id/digitalClock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textColor="#4169E1"
+        android:textSize="30sp"
+
+        android:layout_marginTop="20dp"
+
+        app:layout_constraintTop_toBottomOf="@+id/AnalogClock"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+
+        />
+
+
+    <TextClock
+        android:id="@+id/timeText"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+
+        android:format12Hour="hh:mm"
+        android:format24Hour="HH:mm"
+        android:textColor="@android:color/holo_orange_light"
+        android:textSize="40sp"
+        android:textStyle="bold"
+
+        app:layout_constraintTop_toBottomOf="@+id/AnalogClock"
+        android:layout_marginTop="70dp"
+        />
+
+    <TextClock
+        android:id="@+id/dateText"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+
+        android:format12Hour="yyyy/MM/dd E"
+        android:format24Hour="yyyy/MM/dd E"
+        android:textColor="@android:color/holo_orange_light"
+        android:textSize="40sp"
+        android:textStyle="bold"
+
+
+        app:layout_constraintTop_toBottomOf="@+id/AnalogClock"
+        android:layout_marginTop="130dp"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
